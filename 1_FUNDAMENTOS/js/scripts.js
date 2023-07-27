@@ -4,12 +4,12 @@
 const celsius = 90;
 const fahrenheit = 30
 
-const celsiusToFahrenheit = ( tempCelsius) => {
-    return ((tempCelsius * (9/5)) + 35);
+const celsiusToFahrenheit = (tempCelsius) => {
+    return ((tempCelsius * (9 / 5)) + 35);
 }
 
-const fahrenheitToCelsius = ( tempFahrenheit) => {
-    return ((tempFahrenheit -35  ) * (5/9));
+const fahrenheitToCelsius = (tempFahrenheit) => {
+    return ((tempFahrenheit - 35) * (5 / 9));
 }
 
 // 2 - Calculo de IMC
@@ -43,7 +43,7 @@ const areaRetangulo = (comprimento, largura) => {
 const resultadoAreaRetangulo = areaRetangulo(comprimento, largura);
 
 const perimetroRetangulo = (comprimento, largura) => {
-    return  2 * (largura + comprimento).toFixed(2);
+    return 2 * (largura + comprimento).toFixed(2);
 }
 
 const resultadoPerimetroRetangulo = perimetroRetangulo(comprimento, largura);
@@ -60,9 +60,69 @@ const verificaDivisibilidade = (numeroA, numeroB) => {
 const resultadoAB = verificaDivisibilidade(numeroA, numeroB);
 const resultadoAC = verificaDivisibilidade(numeroA, numeroC);
 
+// 6 - Faixa etaria
+const idade1 = 50;
+const idade2 = 5;
+
+const faixaEtaria = (idade) => {
+    if (idade >= 0 && idade <= 12) {
+        return "criança";
+    } else if (idade >= 13 && idade <= 17) {
+        return "adolescente";
+    } else if (idade >= 18 && idade <= 59) {
+        return "adulto"
+    } else if (idade >= 60) {
+        return "idoso";
+    } else {
+        return "idade invalida!";
+    }
+}
+
+const resultadoIdade1 = faixaEtaria(idade1);
+const resultadoIdade2 = faixaEtaria(idade2);
+
+// 7 - Comparação de numeros
+const comparador1 = 3;
+const comparador2 = 9;
+
+const comparador = (comparador1, comparador2) => {
+    if (comparador1 < comparador2) {
+        return `O numero ${comparador1} é MENOR que o numero ${comparador2}`;
+    } else if (comparador1 === comparador2) {
+        return `O numero ${comparador1} é IGUAL que o numero ${comparador2}`;
+    } else {
+        return `O numero ${comparador1} é MAIOR que o numero ${comparador2}`;
+    }
+}
+
+const resultadoComparador = comparador(comparador1, comparador2);
+
+// 8 - Calculadora com switch
+
+const calculadora = (num1, num2, op) => {
+    switch (op) {
+        case "+":
+            return num1 + num2;
+
+        case "-":
+            return num1 - num2;
+
+        case "*":
+            return num1 * num2;
+
+        case "/":
+            return num1 / num2;
+    }
+}
+
+const resultadoCalculadora1 = calculadora(5, 3, "+");
+const resultadoCalculadora2 = calculadora(5, 3, "*");
+
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------
+
 // Atividade 1
 console.log(`${celsius} graus celsius equivalem a ${celsiusToFahrenheit(celsius)} graus Fahrenheit! \n ${fahrenheit} graus Fahrenheit equivalem a ${fahrenheitToCelsius(fahrenheit)} graus celsius!`);
-
 
 // Atividade 2
 console.log(`O IMC para a altura ${altura} e o peso ${peso} é de: ${IMC}`);
@@ -75,3 +135,12 @@ console.log(`o valor da area do retangulo é: ${resultadoAreaRetangulo} e o prim
 
 // Atividade 5
 console.log(`${numeroA} / ${numeroB} é divisivel?  ${resultadoAB ? "Sim!" : "Não!"} ja o ${numeroA} / ${numeroC} é divisivel?  ${resultadoAC ? "Sim!" : "Não!"}`);
+
+// Atividade 6
+console.log(`A idade ${idade1} é considerada: ${resultadoIdade1} \n A idade ${idade2} é considerada: ${resultadoIdade2} `);
+
+// Atividade 7
+console.log(`${resultadoComparador}`);
+
+// Atividade 8
+console.log(`O resultado de 5 + 3 é ${resultadoCalculadora1} \n O resultado de 5 * 3 é ${resultadoCalculadora2}`);
