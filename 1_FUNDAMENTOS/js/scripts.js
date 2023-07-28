@@ -118,6 +118,69 @@ const calculadora = (num1, num2, op) => {
 const resultadoCalculadora1 = calculadora(5, 3, "+");
 const resultadoCalculadora2 = calculadora(5, 3, "*");
 
+// 9 - Valor da tarifa
+
+const calcTarifa = (userAge, isStudent) => {
+    if (userAge < 6) {
+        return 0;
+    } else if (userAge > 6 && userAge < 60) {
+        return isStudent ? 2.50 * 0.5 : 2.50;
+    } else if (userAge >= 60) {
+        return isStudent ? 2.50 * 0.5 : 2.50 * (1 - 0.3);
+    } else {
+        return "Idade invalida!"
+    }
+}
+
+// 10 - Somatorio 1 a N
+const somatioN = (n) => {
+    let aux = 1;
+    let somatorio = 1;
+    while (aux < n) {
+        aux++;
+        somatorio += aux
+    }
+    return somatorio;
+}
+
+// 11 - Tabuada
+const baseTabuada = 3;
+
+const tabuada = (baseTabuada) => {
+    let message = `O valor da tabuada de ${baseTabuada} é: \n`
+
+    for (let i = 1; i <= 10; i++) {
+        message += ` ${i} X ${baseTabuada} = ${baseTabuada * i}\n`
+    }
+
+    return message;
+}
+
+// 12 - Numeros primos
+
+const baseNumeroPrimo = 50;
+
+const isPrime = (num) => {
+    if (num <= 1) {
+        return false;
+    }
+
+    for (let i = 2; i <= num; i++) {
+        if (num % i === 0 && num !==i) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+const primeNumberList = (baseNumeroPrimo) => {
+    for(let i = 2; i <= baseNumeroPrimo; i++){
+        if(isPrime(i)){
+            console.log(i);
+        }
+    }
+}
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -144,3 +207,15 @@ console.log(`${resultadoComparador}`);
 
 // Atividade 8
 console.log(`O resultado de 5 + 3 é ${resultadoCalculadora1} \n O resultado de 5 * 3 é ${resultadoCalculadora2}`);
+
+// Atividade 9
+console.log(`O resultado idade = 50 e estudante é ${calcTarifa(50, true)} \n O resultado idade = 60 e não estudante é ${calcTarifa(60, false)} `);
+
+// Atividade 10
+console.log(`O somatorio de 3 é: ${somatioN(3)} \n somatorio de 10 é: ${somatioN(10)}`);
+
+// Atividade 11
+console.log(`${tabuada(baseTabuada)}`)
+
+// Atividade 12
+primeNumberList(baseNumeroPrimo)
