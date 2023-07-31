@@ -189,7 +189,7 @@ const loopSize = 5;
 const loopPrinter = (loopSize) => {
     let printMessage = "*\n";
     for (let i = 2; i <= loopSize; i++) {
-        printMessage += "*".repeat(i); 
+        printMessage += "*".repeat(i);
         printMessage += "\n"
     }
 
@@ -197,6 +197,28 @@ const loopPrinter = (loopSize) => {
 }
 
 const printResult = loopPrinter(loopSize);
+
+// 14 - Fibonacci
+
+const seletorFibonacci = 5;
+
+const calcFibonacci = (num) => {
+    let arrayFinacci = [];
+
+    for (let i = 0; i <= num; i++) {
+        if (i === 0) {
+            arrayFinacci.push(i);
+        } else if (i === 1) {
+            arrayFinacci.push(i);
+        } else {
+            arrayFinacci.push(arrayFinacci[i - 1] + arrayFinacci[i - 2])
+        }
+    }
+    return arrayFinacci;
+}
+
+const resultFibonacci = calcFibonacci(seletorFibonacci);
+
 //-----------------------------------------------------------------------------------------------------------------------------------------------
 
 // Atividade 1
@@ -235,6 +257,9 @@ console.log(`${tabuada(baseTabuada)}`)
 // Atividade 12
 primeNumberList(baseNumeroPrimo)
 
-// Atividade 12
+// Atividade 13
 console.log(printResult)
+
+// Atividade 14
+console.log(resultFibonacci)
 
