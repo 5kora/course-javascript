@@ -232,9 +232,9 @@ const evenOrOdd = (num) => {
 //16 - Fatorial
 
 const calcFactorial = (num) => {
-    if (num === 0 || num === 1){
+    if (num === 0 || num === 1) {
         return 1;
-    }else{
+    } else {
         return num * calcFactorial(num - 1)
     }
 }
@@ -242,17 +242,17 @@ const calcFactorial = (num) => {
 //17 - Min e max
 
 const maxValue = (num1, num2) => {
-    if(num1 > num2){
+    if (num1 > num2) {
         return `O maior valor entre ${num1} e ${num2} é: ${num1}`;
-    }else{
+    } else {
         return `O maior valor entre ${num1} e ${num2} é: ${num2}`;
     }
 }
 
 const minValue = (num1, num2) => {
-    if(num1 > num2){
+    if (num1 > num2) {
         return `O menor valor entre ${num1} e ${num2} é: ${num2}`;
-    }else{
+    } else {
         return `O menor valor entre ${num1} e ${num2} é: ${num1}`;
     }
 }
@@ -270,12 +270,25 @@ const vowelCounter = (string) => {
     let stringSplitted = string.toUpperCase().split("");
     let counter = 0;
     stringSplitted.forEach(letter => {
-        if(vowel.includes(letter)){
+        if (vowel.includes(letter)) {
             counter++;
         }
     });
 
     return `A palavra ${string} contem ${counter} vogais`;
+}
+
+// 20 - Palindromo
+
+const isPalindrome = (string) => {
+    let stringUpper = string.toUpperCase();
+    let validator = true;
+    for (let i = 0; i <= stringUpper.length; i++) {
+        if (stringUpper[i] !== stringUpper[stringUpper.length - i]) {
+            validator = false;
+        }
+    }
+    return validator;
 }
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
@@ -339,3 +352,8 @@ console.log(stringRevert("Dollynho"));
 
 // Atividade 19
 console.log(vowelCounter("Dollynho"));
+
+// Atividade 20
+console.log(isPalindrome("Ana"));
+console.log(isPalindrome("Mao"));
+console.log(isPalindrome("Roma é Amor"));
