@@ -166,7 +166,7 @@ const isPrime = (num) => {
     }
 
     for (let i = 2; i <= num; i++) {
-        if (num % i === 0 && num !==i) {
+        if (num % i === 0 && num !== i) {
             return false;
         }
     }
@@ -175,13 +175,28 @@ const isPrime = (num) => {
 }
 
 const primeNumberList = (baseNumeroPrimo) => {
-    for(let i = 2; i <= baseNumeroPrimo; i++){
-        if(isPrime(i)){
+    for (let i = 2; i <= baseNumeroPrimo; i++) {
+        if (isPrime(i)) {
             console.log(i);
         }
     }
 }
 
+// 13 - Exibição de padrãp
+
+const loopSize = 5;
+
+const loopPrinter = (loopSize) => {
+    let printMessage = "*\n";
+    for (let i = 2; i <= loopSize; i++) {
+        printMessage += "*".repeat(i); 
+        printMessage += "\n"
+    }
+
+    return printMessage;
+}
+
+const printResult = loopPrinter(loopSize);
 //-----------------------------------------------------------------------------------------------------------------------------------------------
 
 // Atividade 1
@@ -219,3 +234,7 @@ console.log(`${tabuada(baseTabuada)}`)
 
 // Atividade 12
 primeNumberList(baseNumeroPrimo)
+
+// Atividade 12
+console.log(printResult)
+
