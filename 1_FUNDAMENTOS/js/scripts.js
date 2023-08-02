@@ -281,16 +281,21 @@ const vowelCounter = (string) => {
 // 20 - Palindromo
 
 const isPalindrome = (string) => {
-    let stringUpper = string.toUpperCase();
-    let validator = true;
-    for (let i = 0; i <= stringUpper.length; i++) {
-        if (stringUpper[i] !== stringUpper[stringUpper.length - i]) {
-            validator = false;
-        }
-    }
-    return validator;
+    let stringReverse = string.split("").reverse().join("");
+    return string.toUpperCase() === stringReverse.toUpperCase();
 }
 
+// 21 - Array de numeros aleatorios
+const randomArray = (arraySize, min, max) => {
+    return Array.from({length:arraySize}, () => Math.floor(Math.random()*(max - min) + min))
+}
+
+const returnRandomArray = randomArray(10, 6,23);
+
+// 22 - Elemento mais frequente
+const mostFrequent = (string) => {
+    
+}
 //-----------------------------------------------------------------------------------------------------------------------------------------------
 
 // Atividade 1
@@ -357,3 +362,6 @@ console.log(vowelCounter("Dollynho"));
 console.log(isPalindrome("Ana"));
 console.log(isPalindrome("Mao"));
 console.log(isPalindrome("Roma é Amor"));
+
+// Atividade 21
+console.log(`O vetor é: ${returnRandomArray}`);
