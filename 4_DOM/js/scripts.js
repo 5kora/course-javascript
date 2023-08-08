@@ -43,3 +43,22 @@ selectedItems.forEach((item) => {
     } 
     )
 })
+
+//35 - Filtrar itens
+const filterElement = () => {
+    var filterInput = document.getElementById("filter-input").value.toUpperCase();
+    
+    const lista = document.querySelectorAll(".lista-itens li");
+
+    lista.forEach((item) => {
+        const texto = item.innerText || item.textContent;
+        item.style.display = texto.toUpperCase().includes(filterInput) ? "" : "none";
+    })
+
+}
+
+const inputFilter = document.getElementById("filter-input");
+
+inputFilter.addEventListener("keyup",() => {
+    filterElement();
+})
