@@ -65,6 +65,13 @@ const filterProperties = (filterArray, obj) => {
 
     return newObject;
 }
+
+//29 - Concatenando objetos
+
+const concatProperties = (obj1, obj2) => {
+
+    return Object.assign({},obj1,obj2);;
+}
 //-----------------------------------------------------------------------------------------------------------------------------------------------
 
 // Atividade 23
@@ -97,3 +104,8 @@ console.log(`O objeto é ${objetExample}, a soma das props é: ${sumProperties(o
 const objtFiltrado = filterProperties(filterArray, completeObj)
 console.log(`O objeto filtrado é:\n`)
 console.log(objtFiltrado)
+
+// Atividade 29
+const concatObject = concatProperties(objetExample, completeObj)
+console.log(`O objeto concatenado é:\n`)
+console.log(concatObject)
