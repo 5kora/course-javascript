@@ -29,3 +29,17 @@ const addBtn = document.querySelector("#new-item-btn");
 addBtn.addEventListener("click", () => {
     addLi();
 });
+
+// 34 - Removendo elementos
+const removeElement = (event) => {
+    event.target.remove();
+}
+
+const selectedItems = document.querySelectorAll(".item");
+
+selectedItems.forEach((item) => {
+    item.addEventListener("click",(e) =>{
+        removeElement(e)
+    } 
+    )
+})
