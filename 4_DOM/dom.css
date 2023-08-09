@@ -8,6 +8,11 @@
     background-color: blueviolet;
 }
 
+.selected{
+    box-shadow: 4px 2px #000;
+    background-color: blanchedalmond;
+}
+
 
 body{
     padding-bottom: 500px;
