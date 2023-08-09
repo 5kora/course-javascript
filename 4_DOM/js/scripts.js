@@ -62,3 +62,10 @@ const inputFilter = document.getElementById("filter-input");
 inputFilter.addEventListener("keyup",() => {
     filterElement();
 })
+
+// 36 - Mover itens
+const activeItem = () => {
+    const list = document.querySelector("lista-movel");
+    list.children().toggle("selected");
+}
+
