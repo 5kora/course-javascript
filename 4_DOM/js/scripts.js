@@ -72,6 +72,27 @@ const activeItem = (event, list) => {
     event.target.classList.add("selected");
 }
 
+const upItem = () => {
+    const list = document.querySelector(".lista-movel");
+    const selectedItem = list.querySelector(".selected");
+
+    if (selectedItem) {
+        const previousItem = selectedItem.previousElementSibling;
+        list.insertBefore(selectedItem, previousItem)
+    }
+}
+
+const downItem = () => {
+    const list = document.querySelector(".lista-movel");
+    const selectedItem = list.querySelector(".selected");
+
+    if (selectedItem) {
+        const nextItem = selectedItem.nextElementSibling;
+        list.insertBefore(nextItem , selectedItem);
+    }
+}
+
+
 const list = document.querySelector(".lista-movel");
 
 list.addEventListener("click", (event) => {
@@ -83,4 +104,10 @@ list.addEventListener("click", (event) => {
 const upButton = document.querySelector(".subir");
 const downButton = document.querySelector(".descer");
 
-upButton.addEventListener("click")
+upButton.addEventListener("click", () => {
+    upItem();
+});
+
+downButton.addEventListener("click", () => {
+    downItem();
+});

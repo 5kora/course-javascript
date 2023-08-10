@@ -10,7 +10,8 @@
 
 .selected{
     box-shadow: 4px 2px #000;
-    background-color: blanchedalmond;
+    background-color: rgba(123, 123, 123, 0.812);
+    width: 70px;
 }
 
 
