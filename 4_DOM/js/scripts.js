@@ -5,7 +5,7 @@ document.getElementById("titulo").innerText = "Novo titulo!";
 document.querySelectorAll('p').forEach(e => e.style.color = "red");
 
 //32 - Alterando classe
-const activeColor = () =>{
+const activeColor = () => {
     const divContainer = document.querySelector(".div-container");
     divContainer.classList.toggle("ativo");
 }
@@ -38,16 +38,16 @@ const removeElement = (event) => {
 const selectedItems = document.querySelectorAll(".item");
 
 selectedItems.forEach((item) => {
-    item.addEventListener("click",(e) =>{
+    item.addEventListener("click", (e) => {
         removeElement(e)
-    } 
+    }
     )
 })
 
 //35 - Filtrar itens
 const filterElement = () => {
     var filterInput = document.getElementById("filter-input").value.toUpperCase();
-    
+
     const lista = document.querySelectorAll(".lista-itens li");
 
     lista.forEach((item) => {
@@ -59,13 +59,28 @@ const filterElement = () => {
 
 const inputFilter = document.getElementById("filter-input");
 
-inputFilter.addEventListener("keyup",() => {
+inputFilter.addEventListener("keyup", () => {
     filterElement();
 })
 
 // 36 - Mover itens
-const activeItem = () => {
-    const list = document.querySelector("lista-movel");
-    list.children().toggle("selected");
+const activeItem = (event, list) => {
+    list.querySelectorAll("li").forEach((item) => {
+        item.classList.remove("selected");
+    });
+
+    event.target.classList.add("selected");
 }
 
+const list = document.querySelector(".lista-movel");
+
+list.addEventListener("click", (event) => {
+    if (event.target.tagName === "LI") {
+        activeItem(event, list);
+    }
+})
+
+const upButton = document.querySelector(".subir");
+const downButton = document.querySelector(".descer");
+
+upButton.addEventListener("click")
